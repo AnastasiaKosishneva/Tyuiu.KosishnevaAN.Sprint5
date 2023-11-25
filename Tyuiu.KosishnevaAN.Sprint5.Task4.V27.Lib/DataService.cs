@@ -16,6 +16,7 @@ namespace Tyuiu.KosishnevaAN.Sprint5.Task4.V27.Lib
             double res = (Convert.ToDouble(strX) * Convert.ToDouble(strX) * Convert.ToDouble(strX) - 4.0 * Convert.ToDouble(strX)) / Math.Cos(Convert.ToDouble(strX));
             res = Math.Round(res, 3);
             return res;
+
         }
     }
 }
