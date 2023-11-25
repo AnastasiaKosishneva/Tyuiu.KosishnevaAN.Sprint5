@@ -31,7 +31,7 @@ namespace Tyuiu.KosishnevaAN.Sprint5.Task2.V21.Lib
                 {
                     if (matrix[i, j] % 2 == 0)
                     {
-                        matrix[i, j] = 0;
+                        matrix[i, j] = 0; 
                     }
                 }
             }
