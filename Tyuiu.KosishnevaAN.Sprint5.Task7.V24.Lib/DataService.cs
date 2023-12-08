@@ -19,7 +19,8 @@ namespace Tyuiu.KosishnevaAN.Sprint5.Task7.V24.Lib
             {
                 File.Delete(pathSaveFile);
             }
-
+            string str = "ЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮйцукенгшщзхъфывапролджэячсмитьбю";
+            bool flag = true;
             string strLine = "";
             using (StreamReader reader = new StreamReader(path))
             {
@@ -28,9 +29,22 @@ namespace Tyuiu.KosishnevaAN.Sprint5.Task7.V24.Lib
                 {
                     for (int i = 0; i < line.Length; i++)
                     {
-                        if (((line[i] == 'П') && (line[i+1] == 'р') && (line[i+2] == 'и') && (line[i+3] == 'в') && (line[i+4] == 'е') && (line[i+5] == 'т')) || ((line[i] == 'м') && (line[i+1] == 'о') && (line[i+2] == 'я')) || ((line[i] == 'п') && (line[i+1] == 'е') && (line[i+2] == 'р') && (line[i+3] == 'в') && (line[i+4] == 'а') && (line[i+5] == 'я')) || ((line[i] == 'п') && (line[i+1] == 'р') && (line[i+2] == 'о') && (line[i+3] == 'г') && (line[i+4] == 'р') && (line[i+5] == 'а') && (line[i+6] == 'м') && (line[i+7] == 'м') && (line[i+8] == 'а')))
+                        if (str.Contains(line[i]))
                         {
-                            strLine += 'с' + 'л' + 'о' + 'в' + 'о';
+                            flag = false;
+                        }
+
+                        else
+                        {
+                            if (flag == false)
+                            {
+                                strLine += " слово ";
+                                flag = true;
+                            }
+                            else
+                            {
+                                strLine += line[i];
+                            }
                         }
                     }
                     File.AppendAllText(pathSaveFile, strLine + Environment.NewLine);
